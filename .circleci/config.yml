@@ -1,4 +1,5 @@
 version: 2.1
+
 jobs:
   build:
     filters:
@@ -10,9 +11,6 @@ jobs:
       - image: circleci/node:10.16.3
     steps:
       - checkout
-      #   - run:
-      #       name: update-yarn
-      #       command: 'sudo yarn self-update'
       - restore_cache:
           key: dependency-cache-{{ checksum "yarn.lock" }}
       - run:
